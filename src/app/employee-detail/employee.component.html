@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <section class="content">
+            <div *ngIf="employeeDetail.length <= 0" [ngStyle]="{'text-align': 'center','color': 'red'}">
+                            No Criketer Available
+                        </div>
+                        <div [hidden]="!employeeDetail.length>0">
+                            <table class="table">
+                                <tbody>
+                                    <tr *ngFor="let employee of employeeDetail;let i = index">
+                                        <td>
+                                            {{i + 1}}
+                                        </td>
+                                        <td>
+                                        </td>
+                                        <td>
+                                            
+                                                <h4 class="title">
+                                                    {{employee?.firstName}} {{employee?.lastName}}
+                                                </h4>
+                                                <div class="media-body">
+                                                    <span class="media-meta pull-right">{{employee?.employeeId}}</span>
+                                                    
+                                                </div>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+        </section>
+    </div>
+</div>
